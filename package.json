@@ -5,6 +5,7 @@
   "dependencies": {
     "@angular/core": "^12.2.7",
     "@babel/core": "^7.15.5",
+    "@capacitor/android": "3.2.4",
     "@capacitor/app": "1.0.2",
     "@capacitor/core": "3.1.2",
     "@capacitor/haptics": "1.0.2",
