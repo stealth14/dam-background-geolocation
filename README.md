@@ -2,7 +2,7 @@
 
 ## Stack de herramientas
 
-Ionic + React + Firebase
+Ionic + React + Firebase firestore
 
 ## Rúbrica
 
