@@ -8,8 +8,9 @@ export interface Location {
 
 export const postLocation = async (location: Location) => {
   const data = {
-    ownerId: location.lng,
-    fromName: location.lat,
+    lng: location.lng,
+    lat: location.lat,
+    date: location.date,
   };
 
   await db.collection("locations").doc().set(data);

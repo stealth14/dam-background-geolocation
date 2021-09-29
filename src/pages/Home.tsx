@@ -14,6 +14,8 @@ import { getLocation } from "../lib/geolocation";
 import { Location, postLocation } from "../data/location";
 
 const Home: React.FC = () => {
+  const [current, setCurrent] = useState("Tracking location...");
+
   const send = async () => {
     const coords = await getLocation();
 
@@ -24,32 +26,27 @@ const Home: React.FC = () => {
     } as Location;
 
     postLocation(location);
-    console.log("location sent")
-  };
-
-  const onClick = async () => {
-    send();
+    setCurrent(
+      `Last location synchronized: lat:${Number(location.lat).toFixed(
+        2
+      )} lng:${Number(location.lng).toFixed(2)}`
+    );
   };
 
   useEffect(() => {
     setInterval(() => {
-      send();
+      // send();
     }, 3000);
-    
   }, []);
 
   return (
     <IonPage id="home-page">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
+          <IonTitle>Location sniffer</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonButton onClick={onClick} expand="block">
-          Send
-        </IonButton>
-      </IonContent>
+      <IonContent fullscreen>{current}</IonContent>
     </IonPage>
   );
 };
