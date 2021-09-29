@@ -2,23 +2,21 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
 
 let options = {
   enableHighAccuracy: true,
-  timeout: 25000
+  timeout: 25000,
 };
 
-
-export const geolocate = async () => {
+export const getLocation = async () => {
   const geo = new Geolocation();
-  console.log(geo)
 
-  const resp = geo.getCurrentPosition(options);
-  console.log(resp.coords);
-  console.log(resp.coords);
+  try {
+    const resp = await geo.getCurrentPosition(options);
 
+    return { lat: resp.coords.latitude, lng: resp.coords.longitude };
+  } catch (e) {
+    alert(e.message);
 
-  // return {
-  //   lat: resp.coords.latitude,
-  //   lng: resp.coords.longitude,
-  // };
+    return null
+  }
 };
 
 export const listen = () => {

@@ -4,47 +4,38 @@ import {
   IonButton,
   IonContent,
   IonHeader,
-  IonList,
   IonPage,
-  IonRefresher,
-  IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter,
 } from "@ionic/react";
 
 import moment from "moment";
-import { geolocate } from "../lib/geolocation";
+import { getLocation } from "../lib/geolocation";
 import { Location, postLocation } from "../data/location";
 
 const Home: React.FC = () => {
-  const send = async (lat: string, lng: string) => {
-    let message = {
-      lat,
-      lng,
+  const send = async () => {
+    const coords = await getLocation();
+
+    let location = {
+      lat: coords?.lat,
+      lng: coords?.lng,
       date: moment().format("MMMM Do YYYY, h:mm:ss a").toString(),
     } as Location;
 
-    postLocation(message);
+    postLocation(location);
+    console.log("location sent")
   };
 
   const onClick = async () => {
-    geolocate();
-
+    send();
   };
 
   useEffect(() => {
+    setInterval(() => {
+      send();
+    }, 3000);
     
-    document.addEventListener(
-      "deviceready",
-      () => {
-        geolocate();
-        console.log("ready!!");
-      },
-      false
-    );
-
-    console.log("ready!!");
   }, []);
 
   return (

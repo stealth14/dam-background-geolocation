@@ -1,8 +1,8 @@
 import { db } from "./data";
 
 export interface Location {
-  lng: string;
-  lat: string;
+  lng: number;
+  lat: number;
   date: string;
 }
 
