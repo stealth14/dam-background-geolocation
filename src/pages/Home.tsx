@@ -26,9 +26,9 @@ const Home: React.FC = () => {
 
     postLocation(location);
     setCurrent(
-      `Last location synchronized: lat:${Number(location.lat).toFixed(
-        2
-      )} lng:${Number(location.lng).toFixed(2)}`
+      `Last known: lat:${Number(location.lat).toFixed(2)} lng:${Number(
+        location.lng
+      ).toFixed(2)}`
     );
   };
 
