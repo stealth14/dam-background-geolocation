@@ -4,8 +4,6 @@
 
 Ionic + React + Firebase
 
-## Vista previa
-
 ## Rúbrica
 
 - [x] Descargar [apk funcional](https://drive.google.com/file/d/1Xzk6GTEOmEhxkNexSO4GCguEjuAWodC8/view?usp=sharing)
