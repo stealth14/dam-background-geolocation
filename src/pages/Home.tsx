@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {
-  IonButton,
   IonContent,
   IonHeader,
   IonPage,
@@ -35,7 +34,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     setInterval(() => {
-      // send();
+      send();
     }, 3000);
   }, []);
 
@@ -46,7 +45,9 @@ const Home: React.FC = () => {
           <IonTitle>Location sniffer</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>{current}</IonContent>
+      <IonContent fullscreen>
+        <IonTitle>{current}</IonTitle>
+      </IonContent>
     </IonPage>
   );
 };
