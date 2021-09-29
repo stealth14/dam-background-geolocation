@@ -1,12 +1,10 @@
-# dam-background-geolocation
+# Location sniffer
 
 ## Stack de herramientas
 
 Ionic + React + Firebase
 
 ## Vista previa
-
-Location sniffer
 
 ## Rúbrica
 
