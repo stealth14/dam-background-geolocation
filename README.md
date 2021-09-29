@@ -6,3 +6,4 @@ minimal ionic + react project for tracking device geolocation
 
 [Ver almacenaje de ubicaciones en firebase](https://youtu.be/LwpjM5aomQ0)
 
+[Ver demo en android con simulador de movimiento](https://youtu.be/WELvom5P7XU)
